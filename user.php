@@ -10,9 +10,6 @@ if(isset($_SESSION["uid"]))
 $qry = "SELECT * FROM `notice` order by id desc limit 5 ";
 $result = mysqli_query($connect, $qry);
 $row = mysqli_num_rows($result);
-
-
-
   ?>
 
 <!DOCTYPE html>
@@ -48,11 +45,9 @@ $row = mysqli_num_rows($result);
 								while($data =
 								mysqli_fetch_assoc($result))
 								{ ?>
-									<marquee direction="left" behavior="scroll" scrollamount="4" onmouseover="this.stop()" onmouseout="this.start();"> <li> <?php echo $data["notice"]; ?> </li></marquee>
+									<marquee direction="up" behavior="scroll" scrollamount="4" onmouseover="this.stop()" onmouseout="this.start();"> <li> <?php echo $data["notice"]; ?> </li></marquee>
 								<?php }
 								}
-
-
 
 						else
 						{  ?>
@@ -64,7 +59,10 @@ $row = mysqli_num_rows($result);
 		</div>
 	</div>
 </div>
-<a href="Logout.php"> Logout </a>
+<br/>
+<div class="container-fluid">
+ <button class="btn btn-dark text-light"><a href="Logout.php"> Logout </a></button>
+</div>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
