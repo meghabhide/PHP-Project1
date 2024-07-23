@@ -37,6 +37,7 @@ $row = mysqli_num_rows($result);
 			<div class="card">
 				<div class="card-header bg-dark text-light"> Notice </div>
 				<div class="card-body">
+					<marquee direction="up" behavior="scroll" scrollamount="4" onmouseover="this.stop()" onmouseout="this.start();">
 					<ul>
 						
 						<?php
@@ -45,7 +46,7 @@ $row = mysqli_num_rows($result);
 								while($data =
 								mysqli_fetch_assoc($result))
 								{ ?>
-									<marquee direction="up" behavior="scroll" scrollamount="4" onmouseover="this.stop()" onmouseout="this.start();"> <li> <?php echo $data["notice"]; ?> </li></marquee>
+									 <li> <?php echo $data["notice"]; ?> </li>
 								<?php }
 								}
 
@@ -54,6 +55,7 @@ $row = mysqli_num_rows($result);
 								<li> No Notice Found</li>
 						<?php } ?>
 						</ul>
+					</marquee>
 				</div>
 			</div>
 		</div>
@@ -61,7 +63,7 @@ $row = mysqli_num_rows($result);
 </div>
 <br/>
 <div class="container-fluid">
- <button class="btn btn-dark text-light"><a href="Logout.php"> Logout </a></button>
+ <button class="btn btn-dark "><a href="Logout.php" class="text-light"> Logout </a></button>
 </div>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
